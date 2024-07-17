@@ -1,7 +1,8 @@
 <!-- todo-list.component.html -->
 <div>
-    <input type="text" #todoText placeholder="Add Todo">
+    <input #todoText (keydown.enter)="addTask(todoText.value)" type="text" placeholder="Add Todo">
     <button (click)="addTask(todoText.value)">Add</button>
+
 </div>
 
 <ul>
@@ -14,4 +15,7 @@
         <span [class.completed]="todoItem.completed">{{ todoItem.task }}</span>
         <button (click)="deleteTask(todoItem.id)">Delete</button>
     </li>
+
+
 </ul>
+
